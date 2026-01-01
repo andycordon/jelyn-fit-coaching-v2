@@ -1167,7 +1167,7 @@ li .fa-dumbbell,
 
 .texte-presentation {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   align-items: center;
   gap:40px;
 }
@@ -1184,7 +1184,7 @@ li .fa-dumbbell,
 
 /* alternance inverse */
 .texte-presentation:nth-child(even) {
-  flex-direction: row;
+  flex-direction: row-reverse;
 }
 
 .section-aide {
@@ -1223,10 +1223,32 @@ li .fa-dumbbell,
 
 }
 
+/*qui suis je*/
+#qui > div {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 40px;
+}
 
+/* texte */
+#qui > div > div {
+  display: flex;
+  flex-direction: column;
+  flex: 2;
+}
 
+/* image */
+#qui > div > img {
+  flex: 1;
+  max-width: 100%;
+  height: auto;
+}
 
-
+/* alternance */
+#qui > div:nth-of-type(even) {
+  flex-direction: row;
+}
 
 
 
@@ -1379,6 +1401,7 @@ li .fa-dumbbell,
 .footer-cta a:hover .fa-gift {
   transform: scale(2.2) rotate(360deg); 
 }
+
 
 
 
