@@ -1164,12 +1164,11 @@ li .fa-dumbbell,
   img {
     max-width: 30rem;
   }
-
 .texte-presentation {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap:40px;
+  gap: 40px;
 }
 
 .texte-presentation > div {
@@ -1178,14 +1177,20 @@ li .fa-dumbbell,
   flex: 2;
 }
 
+/* colonne image */
 .texte-presentation img {
   flex: 1;
+  align-self: center;
+  max-width: 100%;
 }
 
-/* alternance inverse */
+/* alternance */
 .texte-presentation:nth-child(even) {
   flex-direction: row-reverse;
 }
+
+
+
 
 .section-aide {
   display: flex;
@@ -1249,6 +1254,7 @@ li .fa-dumbbell,
 #qui > div:nth-of-type(even) {
   flex-direction: row;
 }
+
 
 
 
