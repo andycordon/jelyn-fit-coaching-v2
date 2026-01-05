@@ -360,6 +360,7 @@ section {
 #hero,
 #accueil,
 #qui,
+#quoi,
 #coachings,
 #coachings2 #contact,
 #paiement,
@@ -588,6 +589,17 @@ footer {
   font-size: 5rem;
   color: var(--violet);
   margin-bottom: -0.5rem;
+}
+
+/*Quoi*/
+.fa-shoe-prints,
+.fa-phone-volume,
+.fa-handshake,
+.fa-calendar-days,
+.fa-arrow-trend-up {
+    color: var(--violet);
+    font-size: 2.5rem;
+    margin:0rem 0 0.5rem 0;
 }
 
 /*Coachings*/
