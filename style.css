@@ -1145,15 +1145,17 @@ li .fa-dumbbell,
   }
   nav ul {
     display: flex;
-  }
-  nav ul li {
+    align-items: center;
+    
+}
+nav ul li {
     border-bottom: none;
     transition: all 0.3s ease;
-  }
+}
 
-  nav ul li a {
+nav ul li a {
     font-size: 1rem;
-    padding: 0.75rem;
+    padding:0.5rem;
     border-radius: 0.5rem 0.5rem 1rem 0.5rem;
   }
   nav ul li a:hover {
@@ -1266,6 +1268,24 @@ li .fa-dumbbell,
 #qui > div:nth-of-type(even) {
   flex-direction: row;
 }
+
+
+
+/*quoi*/
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.steps > div {
+  flex: 0 0 calc(45%);
+}
+
+
+
 
 
 
