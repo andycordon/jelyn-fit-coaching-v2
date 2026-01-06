@@ -366,7 +366,8 @@ section {
 #paiement,
 #blog,
 #cgv,
-#article {
+#article,
+.liste-accompagnements{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -603,22 +604,21 @@ footer {
 }
 
 /*Coachings*/
-.price {
-  display: flex;
-  text-align: center;
-  align-items: center;
-  color: var(--rose);
-  margin: -1rem 0 0 0;
+.liste-accompagnements p {
+    margin: 1rem 0;
 }
-.price p {
-  font-size: 3.7rem;
-  font-weight: 900;
-  font-family: "Quicksand", sans-serif;
+.liste-accompagnements img {
+    margin: 0;
 }
 
-.fa-euro-sign {
-  font-size: 3.2rem;
+#coachings h2 {
+    margin: 0 0 0.5rem 0;
 }
+.liste-accompagnements hr {
+    text-align: center;
+    margin: 4rem auto 1rem auto;
+}
+
 
 /*Contact*/
 #contact a {
@@ -1285,6 +1285,33 @@ nav ul li a {
 }
 
 
+/*Accompagnements*/
+.liste-accompagnements {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content:center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.liste-accompagnements > div {
+  flex: 0 0 calc(45%);
+  justify-content: center;
+}
+
+.liste-accompagnements p {
+  height: 6.5rem;
+}
+
+.liste-accompagnements img {
+    width: 90%;
+}
+
+
+
 
 
 
@@ -1307,6 +1334,12 @@ nav ul li a {
     max-width: 1024px;
     height: 600px;
   }
+
+
+
+
+
+
 
   /*Infos*/
   .info-menu {
