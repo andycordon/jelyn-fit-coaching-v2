@@ -1031,7 +1031,7 @@ li .fa-dumbbell,
 
 /*Zone avis slid*/
 .avis-wrapper {
-  width: 280px;
+  max-width: 280px;
   margin: 0 auto;
 }
 
@@ -1198,7 +1198,30 @@ input[type="radio"] {
   #contact a .fa-youtube {
     font-size: 3.2rem;
   }
+
+
+
+  /*Zone avis slid*/
+.avis-wrapper {
+  max-width: 768px;
 }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1517,6 +1540,11 @@ nav ul li a {
   .scroll-top {
     bottom: 4rem;
     font-size: 2.4rem;
+  }
+
+    /*Zone avis slid*/
+.avis-wrapper {
+    max-width: 1054px;
   }
 }
 
