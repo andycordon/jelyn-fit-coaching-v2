@@ -1029,6 +1029,88 @@ li .fa-dumbbell,
 
 
 
+/*Zone avis slid*/
+.avis-wrapper {
+  width: 280px;
+  margin: 0 auto;
+}
+
+.avis-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.avis-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.avis {
+  flex: 0 0 100%;
+  font-size: 1.08rem;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+/* Déplacements */
+#avis1:checked ~ .avis-slider .avis-track { transform: translateX(0); }
+#avis2:checked ~ .avis-slider .avis-track { transform: translateX(-100%); }
+#avis3:checked ~ .avis-slider .avis-track { transform: translateX(-200%); }
+#avis4:checked ~ .avis-slider .avis-track { transform: translateX(-300%); }
+#avis5:checked ~ .avis-slider .avis-track { transform: translateX(-400%); }
+
+/* Navigation */
+.nav {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.nav label {
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin: 0 0.5rem;
+  background: var(--violet);
+  border-radius: 0.2rem 0.2rem 0.4rem 0.2rem;
+  cursor: pointer;
+  opacity: 0.3;
+}
+
+#avis1:checked ~ .nav label[for="avis1"],
+#avis2:checked ~ .nav label[for="avis2"],
+#avis3:checked ~ .nav label[for="avis3"],
+#avis4:checked ~ .nav label[for="avis4"],
+#avis5:checked ~ .nav label[for="avis5"] {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1477,6 +1559,13 @@ nav ul li a {
 .footer-cta a:hover .fa-gift {
   transform: scale(2.2) rotate(360deg); 
 }
+
+
+
+
+
+
+
 
 
 
