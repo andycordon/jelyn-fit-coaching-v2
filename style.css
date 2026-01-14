@@ -304,8 +304,7 @@ nav ul li:hover {
 
 /*Boutons lateral contact et appel telephonique*/
 .scroll-top,
-.call-button,
-.card-gift {
+.call-button {
   width: 15px;
   height: 25px;
   position: fixed;
@@ -329,13 +328,8 @@ nav ul li:hover {
 }
 .call-button {
   border-radius: 20px 0px 0px 0px;
-  bottom: 7.4rem;
+  bottom: 4.4rem;
   font-size: 1.2rem;
-}
-.card-gift {
-  border-radius: 0px 0px 0px 0px;
-  bottom: 4.2rem;
-  font-size: 1.4rem;
 }
 .scroll-top {
   border-radius: 0px 0px 0px 20px;
@@ -345,8 +339,7 @@ nav ul li:hover {
 
 
 .scroll-top:hover,
-.call-button:hover,
-.card-gift:hover {
+.call-button:hover{
   background-color: var(--violet);
   color: var(--rose);
 }
@@ -1523,22 +1516,17 @@ nav ul li a {
 
   /*Call top button*/
   .scroll-top,
-  .call-button,
-  .card-gift {
-    width: 25px;
-    height: 30px;
+  .call-button{
+    width: 20px;
+    height: 26px;
     padding: 1rem;
   }
   .call-button {
-    bottom: 12.02rem;
-    font-size: 1.8rem;
-  }
-  .card-gift {
-    bottom: 8rem;
-    font-size: 2rem;
+    bottom: 5.9rem;
+    font-size: 1.7rem;
   }
   .scroll-top {
-    bottom: 4rem;
+    bottom: 2rem;
     font-size: 2.4rem;
   }
 
@@ -1546,46 +1534,6 @@ nav ul li a {
 .avis-wrapper {
     max-width: 1054px;
   }
-}
-
-
-.footer-cta {
-  border-top: 0.3rem solid var(--violet);
-  text-align: center;
-  padding: 0.5rem 0;
-  margin-top: 2rem;
-  font-weight: bold;
-  background: linear-gradient(270deg, var(--blanc) , var(--rose), var(--blanc));
-  background-size: 600% 600%;
-  animation: gradientShift 5s ease infinite;
-}
-
-.footer-cta a {
-  display: block; 
-  color: var(--violet);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.footer-cta .text-top,
-.footer-cta .text-bottom {
-  transition: opacity 0.3s ease;
-}
-
-.footer-cta .fa-gift {
-  padding: 0.3rem 0;
-  font-size: 2.5rem;
-  display: inline-block;
-  transition: transform 0.6s ease;
-}
-
-.footer-cta a:hover .text-top,
-.footer-cta a:hover .text-bottom {
-  opacity: 0;
-}
-
-.footer-cta a:hover .fa-gift {
-  transform: scale(2.2) rotate(360deg); 
 }
 
 
