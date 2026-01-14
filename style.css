@@ -355,8 +355,7 @@ section {
 #qui,
 #quoi,
 #coachings,
-#coachings2 #contact,
-#paiement,
+#coachings2, #contact,
 #blog,
 #cgv,
 #article,
@@ -370,16 +369,12 @@ section {
   margin-top: -3rem;
 }
 
-#tarifs {
-  padding: 20px 0;
-}
 
 #article .article-button {
   margin: 2rem 0;
 }
 
 /*bouton des contenus*/
-
 .go-button {
   display: inline-block;
   background-color: var(--violet);
@@ -532,24 +527,6 @@ footer {
   margin-bottom: 1rem;
 }
 
-.presentation-block {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.presentation-block h2 {
-  font-size: 1.8rem;
-  margin: 0 0 1rem 0rem;
-}
-
-.presentation-block p {
-  margin: 0.5rem 0;
-  font-size: 1rem;
-}
-
 .fa-heart-pulse,
 .fa-person-arrow-up-from-line,
 .fa-hand-holding-heart,
@@ -572,14 +549,9 @@ footer {
   margin: -0.5rem 0 0 0;
 }
 
-.fa-graduation-cap,
-.fa-briefcase,
-.fa-heart-circle-bolt,
 .fa-bowl-rice,
 .fa-dumbbell,
 .fa-weight-scale,
-.fa-music,
-.fa-masks-theater,
 .fa-person-running {
   font-size: 5rem;
   color: var(--violet);
@@ -587,15 +559,6 @@ footer {
 }
 
 /*Quoi*/
-.fa-shoe-prints,
-.fa-phone-volume,
-.fa-handshake,
-.fa-calendar-days,
-.fa-arrow-trend-up {
-    color: var(--violet);
-    font-size: 2.5rem;
-    margin:0rem 0 0.5rem 0;
-}
 
 /*Coachings*/
 .liste-accompagnements p {
@@ -665,151 +628,6 @@ iframe {
   display: flex;
 }
 
-/*Tarifs*/
-.scroll-container {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  color: var(--blanc);
-  padding: 1rem;
-  margin-bottom: 2rem;
-}
-
-.card {
-  width: 16rem;
-  height: 16rem;
-  perspective: 1000px;
-  flex-shrink: 0;
-}
-
-.card-inner {
-  width: 100%;
-  height: 100%;
-  transition: transform 0.4s;
-  transform-style: preserve-3d;
-  position: relative;
-}
-
-.card:hover .card-inner {
-  transform: rotateY(-180deg);
-}
-
-.card-front,
-.card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  padding: 0.3rem;
-  box-sizing: border-box;
-  background-color: var(--rose);
-  border: 0.3rem solid var(--violet);
-}
-
-.card-front {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 1rem 1rem 5rem 1rem;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-}
-
-.card-front em {
-  margin: 1rem 0 0 0;
-}
-
-.price-tarif {
-  display: flex;
-  text-align: center;
-  align-items: center;
-}
-.price-tarif p {
-  font-size: 3.7rem;
-  font-weight: 600;
-  font-family: "Quicksand", sans-serif;
-}
-.price-tarif-devis {
-  line-height: 0.7;
-  margin-top: 0.3rem;
-}
-
-.plus-icon {
-  position: absolute;
-  bottom: 0.5rem;
-  left: 0.5rem;
-  font-size: 1rem;
-  background-color: var(--blanc);
-  color: var(--rose);
-  padding: 0.3rem;
-  border-radius: 0.4rem 0.7rem 0.4rem 0.4rem;
-}
-
-.card-back {
-  transform: rotateY(180deg);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  position: relative;
-  border-radius: 1rem 1rem 1rem 5rem;
-  padding: 0 0 3.5rem 0;
-}
-
-.card-button {
-  position: absolute;
-  inset: auto 0 0 0;
-  background: var(--violet);
-  color: var(--blanc);
-  padding: 1.3rem;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 0 0 0rem 5rem;
-  font-size: 1rem;
-  overflow: hidden;
-}
-
-.card-button span {
-  display: inline-block;
-  transition: color 0.3s ease;
-}
-
-.card-button:hover span {
-  animation: jump-text 0.3s forwards;
-}
-
-@keyframes jump-text {
-  50% {
-    transform: scale(1.2);
-    text-shadow: 0 5px 15px rgba(0, 250, 62, 0.3);
-    color: var(--rose);
-  }
-}
-
-.title-back-card {
-  margin: 0.5rem 0;
-}
-
-.card-back em {
-  margin: 0 0 0.5rem 0;
-}
-
-#paiement {
-  margin-top: -3rem;
-}
-#paiement h3 {
-  padding: 0.5rem 0;
-}
-
-.fa-coins,
-.fa-building-columns,
-.fa-money-check {
-  color: var(--violet);
-  font-size: 3rem;
-}
-
-.section-paiement div {
-  margin: 1rem 0;
-}
 
 /*Infos*/
 #informations {
@@ -912,24 +730,6 @@ details[open] .reponse {
   color: var(--rose);
 }
 
-/*Coaching fiche*/
-
-.icon-list {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.icon-list li {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin: 0rem 1rem;
-}
-.icon-list p {
-  color: black;
-  padding: 0.5rem 0 1rem 0;
-}
 
 
 /*Blog*/
@@ -1020,40 +820,31 @@ details[open] .reponse {
   max-width: 280px;
   margin: 0 auto;
 }
-
 .avis-slider {
   width: 100%;
   overflow: hidden;
   position: relative;
 }
-
 .avis-track {
   display: flex;
   transition: transform 0.4s ease;
 }
-
 .avis {
   flex: 0 0 100%;
   font-size: 1.08rem;
 }
-
 input[type="radio"] {
   display: none;
 }
-
-/* Déplacements */
 #avis1:checked ~ .avis-slider .avis-track { transform: translateX(0); }
 #avis2:checked ~ .avis-slider .avis-track { transform: translateX(-100%); }
 #avis3:checked ~ .avis-slider .avis-track { transform: translateX(-200%); }
 #avis4:checked ~ .avis-slider .avis-track { transform: translateX(-300%); }
 #avis5:checked ~ .avis-slider .avis-track { transform: translateX(-400%); }
-
-/* Navigation */
 .nav {
   text-align: center;
   margin: 1rem 0;
 }
-
 .nav label {
   display: inline-block;
   width: 1rem;
@@ -1064,7 +855,6 @@ input[type="radio"] {
   cursor: pointer;
   opacity: 0.3;
 }
-
 #avis1:checked ~ .nav label[for="avis1"],
 #avis2:checked ~ .nav label[for="avis2"],
 #avis3:checked ~ .nav label[for="avis3"],
@@ -1072,6 +862,19 @@ input[type="radio"] {
 #avis5:checked ~ .nav label[for="avis5"] {
   opacity: 1;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1139,20 +942,6 @@ input[type="radio"] {
     border-radius: 1rem 1rem 5rem 1rem;
   }
 
-  /*Tarifs*/
-  #tarifs {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .scroll-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 1.5rem;
-  }
 
   /*Articles de blog cards*/
   .blog-categories {
@@ -1192,6 +981,15 @@ input[type="radio"] {
   max-width: 768px;
 }
 }
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1293,8 +1091,6 @@ nav ul li a {
 .texte-presentation:nth-child(even) {
   flex-direction: row-reverse;
 }
-
-
 
 
 .section-aide {
@@ -1407,19 +1203,12 @@ nav ul li a {
 }
 
 
-
-
-
-
-
-
-
   /*all contenu large pages*/
   section {
     max-width: 1054px;
     margin: auto;
   }
-  /*Pour ettendre le degradé sur toute la largeur*/
+
   #hero {
     max-width: 100%;
   }
@@ -1430,11 +1219,6 @@ nav ul li a {
     max-width: 1024px;
     height: 600px;
   }
-
-
-
-
-
 
 
   /*Infos*/
@@ -1474,28 +1258,6 @@ nav ul li a {
     animation: jump-forward 0.3s forwards;
   }
 
-  /*Menu cards*/
-  .presentation-block-all {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-  .presentation-block img {
-    width: 95%;
-  }
-  .presentation-block {
-    width: 260px;
-    margin: 1rem;
-    display: flex;
-    justify-content: space-between;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-    border-radius: 1rem 1rem 5rem 1rem;
-  }
-  .txt-pres-heigt {
-    height: 180px;
-  }
-
   /*Blog cards*/
   .blog-block {
     width: 290px;
@@ -1528,15 +1290,3 @@ nav ul li a {
     max-width: 1054px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
