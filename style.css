@@ -579,7 +579,8 @@ footer {
 .fa-dumbbell,
 .fa-weight-scale,
 .fa-music,
-.fa-masks-theater {
+.fa-masks-theater,
+.fa-person-running {
   font-size: 5rem;
   color: var(--violet);
   margin-bottom: -0.5rem;
@@ -930,14 +931,6 @@ details[open] .reponse {
   padding: 0.5rem 0 1rem 0;
 }
 
-.fa-person-running,
-li .fa-dumbbell,
-.fa-hand-fist,
-.fa-person-praying
-{
-  font-size: 3rem;
-  color: var(--violet);
-}
 
 /*Blog*/
 .blog-block-link {
