@@ -816,61 +816,42 @@ details[open] .reponse {
 
 
 
-/*Zone avis slid*/
+/*Zone avis slide*/
 .avis-wrapper {
-  max-width: 280px;
-  margin: 0 auto;
-}
-.avis-slider {
   width: 100%;
   overflow: hidden;
-  position: relative;
 }
+
+.avis-slider {
+  overflow: hidden;
+}
+
 .avis-track {
   display: flex;
-  transition: transform 0.4s ease;
+  width: 500%;
+  animation: avis-auto 20s infinite;
 }
+
 .avis {
-  flex: 0 0 100%;
+  flex: 0 0 20%;
   font-size: 1.08rem;
 }
-input[type="radio"] {
-  display: none;
-}
-#avis1:checked ~ .avis-slider .avis-track { transform: translateX(0); }
-#avis2:checked ~ .avis-slider .avis-track { transform: translateX(-100%); }
-#avis3:checked ~ .avis-slider .avis-track { transform: translateX(-200%); }
-#avis4:checked ~ .avis-slider .avis-track { transform: translateX(-300%); }
-#avis5:checked ~ .avis-slider .avis-track { transform: translateX(-400%); }
-.nav {
-  text-align: center;
-  margin: 1rem 0;
-}
-.nav label {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  margin: 0 0.5rem;
-  background: var(--violet);
-  border-radius: 0.2rem 0.2rem 0.4rem 0.2rem;
-  cursor: pointer;
-  opacity: 0.3;
-}
-#avis1:checked ~ .nav label[for="avis1"],
-#avis2:checked ~ .nav label[for="avis2"],
-#avis3:checked ~ .nav label[for="avis3"],
-#avis4:checked ~ .nav label[for="avis4"],
-#avis5:checked ~ .nav label[for="avis5"] {
-  opacity: 1;
+
+.avis-wrapper:hover .avis-track {
+  animation-play-state: paused;
 }
 
+.avis-wrapper:active .avis-track {
+  animation-play-state: paused;
+}
 
-
-
-
-
-
-
+@keyframes avis-auto {
+  0%,20%   { transform: translateX(0); }
+  25%,45%  { transform: translateX(-20%); }
+  50%,70%  { transform: translateX(-40%); }
+  75%,95%  { transform: translateX(-60%); }
+  100%     { transform: translateX(0); }
+}
 
 
 
