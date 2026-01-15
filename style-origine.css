@@ -626,6 +626,7 @@ iframe {
 
 .flex-center-iframe {
   display: flex;
+  width: 100%;
 }
 
 
