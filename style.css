@@ -527,13 +527,15 @@ footer {
   margin-bottom: 1rem;
 }
 
-.fa-heart-pulse,
-.fa-person-arrow-up-from-line,
-.fa-hand-holding-heart,
-.fa-signs-post {
+
+.fa-shoe-prints,
+.fa-phone-volume,
+.fa-calendar-days,
+.fa-arrow-trend-up,
+.fa-handshake {
   color: var(--violet);
-  font-size: 3rem;
-  margin-top: 0.5rem;
+  font-size: 2.5rem;
+  margin: -0.5rem 0 0.5rem 0;
 }
 
 /*Qui suis-je*/
