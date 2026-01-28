@@ -855,6 +855,9 @@ details[open] .reponse {
   100%     { transform: translateX(0); }
 }
 
+.citation {
+  font-size: 1.35rem;
+}
 
 
 
