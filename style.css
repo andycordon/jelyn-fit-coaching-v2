@@ -891,6 +891,7 @@ details[open] .reponse {
 
 
 
+
 /* TABLETTE */
 @media screen and (min-width: 768px) {
   /*Logo header*/
@@ -1203,6 +1204,10 @@ nav ul li a {
   #hero {
     max-width: 100%;
   }
+
+  #hero h1 {
+  font-size: 3rem;
+}
 
   /*map et videos articles*/
   iframe {
