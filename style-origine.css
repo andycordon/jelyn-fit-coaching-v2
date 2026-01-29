@@ -527,13 +527,15 @@ footer {
   margin-bottom: 1rem;
 }
 
-.fa-heart-pulse,
-.fa-person-arrow-up-from-line,
-.fa-hand-holding-heart,
-.fa-signs-post {
+
+.fa-shoe-prints,
+.fa-phone-volume,
+.fa-calendar-days,
+.fa-arrow-trend-up,
+.fa-handshake {
   color: var(--violet);
-  font-size: 3rem;
-  margin-top: 0.5rem;
+  font-size: 2.5rem;
+  margin: -0.5rem 0 0.5rem 0;
 }
 
 /*Qui suis-je*/
@@ -853,6 +855,10 @@ details[open] .reponse {
   100%     { transform: translateX(0); }
 }
 
+.citation {
+  font-size: 1.35rem;
+}
+
 
 
 
@@ -941,10 +947,14 @@ details[open] .reponse {
   }
 
   /*map et videos articles*/
-  iframe,
-  .video {
+  iframe {
     max-width: 700px;
     height: 450px;
+    margin: auto;
+  }
+  .video {
+    max-width: 600px;
+    height: 400px;
     margin: auto;
   }
 
@@ -1195,11 +1205,19 @@ nav ul li a {
     max-width: 100%;
   }
 
+  #hero h1 {
+  font-size: 3rem;
+}
+
   /*map et videos articles*/
-  iframe,
-  .video {
+  iframe {
     max-width: 1024px;
     height: 600px;
+  }
+  .video {
+    max-width: 1050px;
+    height: 400px;
+    margin: 2rem 0;
   }
 
 
