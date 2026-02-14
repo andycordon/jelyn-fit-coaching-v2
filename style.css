@@ -329,7 +329,7 @@ nav ul li:hover {
 .call-button {
   border-radius: 20px 0px 0px 0px;
   bottom: 4.4rem;
-  font-size: 1.2rem;
+  font-size: 1.7rem;
 }
 .scroll-top {
   border-radius: 0px 0px 0px 20px;
@@ -528,13 +528,13 @@ footer {
 }
 
 
-.fa-shoe-prints,
-.fa-phone-volume,
-.fa-calendar-days,
-.fa-arrow-trend-up,
-.fa-handshake {
+#quoi .fa-shoe-prints,
+#quoi .fa-phone-volume,
+#quoi .fa-calendar-days,
+#quoi .fa-arrow-trend-up,
+#quoi .fa-handshake {
   color: var(--violet);
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin: -0.5rem 0 0.5rem 0;
 }
 
@@ -1098,6 +1098,10 @@ nav ul li a {
   flex-direction: row-reverse;
 }
 
+/*Bouton call to action de presentation*/
+.cta-button {
+  font-size: 1.7rem;
+}
 
 .section-aide {
   display: flex;
@@ -1292,7 +1296,7 @@ nav ul li a {
   }
   .call-button {
     bottom: 5.9rem;
-    font-size: 1.7rem;
+    font-size: 2.5rem;
   }
   .scroll-top {
     bottom: 2rem;
