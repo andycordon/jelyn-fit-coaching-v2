@@ -1099,7 +1099,7 @@ nav ul li a {
 }
 
 /*Bouton call to action de presentation*/
-.cta-button {
+#hero .cta-button {
   font-size: 1.7rem;
 }
 
