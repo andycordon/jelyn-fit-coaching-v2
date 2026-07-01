@@ -884,6 +884,72 @@ details[open] .reponse {
   font-size: 1.35rem;
 }
 
+.card-sap {
+  max-width: 350px;
+  margin: 1rem auto 1rem auto;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  background: linear-gradient(90deg, #e70083 60%, #a600cf);
+}
+.card-sap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.35),
+    transparent
+  );
+  transform: skewX(-25deg);
+  animation: shine 4.5s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -40%;
+  }
+  30% {
+    left: 120%;
+  }
+  100% {
+    left: 120%;
+  }
+}
+.card-sap .new {
+  background-color: #fff;
+  padding: 0.3rem 0.8rem;
+  margin: 0.25rem 0;
+  color: #e70083;
+  border-radius: 3rem;
+  width: 4.2rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.card-sap .sap-h1 {
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  font-size: 1.25rem;
+}
+.card-sap .sap-h2 {
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  font-size: 1rem;
+}
+.card-sap .txt {
+  color: #fff;
+  font-size: 0.8rem;
+  margin: 0.25rem 0;
+}
+
 
 
 
@@ -993,13 +1059,17 @@ details[open] .reponse {
   #contact a .fa-youtube {
     font-size: 3.2rem;
   }
-
-
+  
 
   /*Zone avis slid*/
 .avis-wrapper {
   max-width: 768px;
 }
+
+.card-sap {
+  max-width: 700px;
+}
+
 }
 
 
@@ -1325,6 +1395,7 @@ nav ul li a {
 .avis-wrapper {
     max-width: 1054px;
   }
+
 }
 
 
