@@ -417,8 +417,7 @@ footer {
   border-top: 0.3rem solid var(--rose);
 }
 .footer-social {
-  border-bottom: 0.2rem solid var(--blanc);
-  padding: 0.5rem 0 1rem 0;
+  padding: 0.5rem 0 0rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -456,6 +455,18 @@ footer {
   padding: 1rem;
   background-color: var(--blanc);
   border-radius: 1rem 1rem 5rem 1rem;
+}
+.logo-sap {
+  width: 25%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  padding: 0.5rem;
+  background-color: var(--blanc);
+  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+.footer-sap {
+      border-bottom: 0.2rem solid var(--blanc);
+        padding: 0rem 0 1.5rem 0;
 }
 .footer-contact p {
   margin: 0.3rem 0;
@@ -944,6 +955,9 @@ details[open] .reponse {
     border-radius: 1rem 1rem 5rem 1rem;
   }
 
+  .logo-sap {
+  width: 15%;
+  }
 
   /*Articles de blog cards*/
   .blog-categories {
@@ -1069,6 +1083,10 @@ nav ul li a {
   .logo-footer {
     max-width: 12rem;
   }
+  .logo-sap {
+    max-width: 9.5rem;
+  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
   /*Taille max des images*/
   img {
     max-width: 30rem;
