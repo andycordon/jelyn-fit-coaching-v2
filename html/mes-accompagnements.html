@@ -273,7 +273,7 @@
   var utm = {};
   UTM_KEYS.forEach(function (k) { var v = params.get(k); if (v) utm[k] = v; });
 
-  // [AJOUT 1] Le fbclid voyage dans utm_term — Calendly supprime fbclid
+  // [AJOUT 1] Le fbclid voyage dans utm_term - Calendly supprime fbclid
   var fbclid = params.get('fbclid');
   if (fbclid && !utm.utm_term) { utm.utm_term = fbclid; }
 
