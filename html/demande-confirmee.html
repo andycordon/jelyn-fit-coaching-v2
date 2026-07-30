@@ -17,9 +17,33 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
+
 fbq('init', '2158463874888716');
-fbq('track', 'PageView');
-fbq('track', 'Schedule');
+
+(function () {
+  var p = new URLSearchParams(window.location.search);
+
+  var am = {};
+  var em = p.get('invitee_email');
+  var ph = p.get('text_reminder_number');
+  var fn = p.get('invitee_first_name');
+  var ln = p.get('invitee_last_name');
+
+  if (em) { am.em = em.trim().toLowerCase(); }
+  if (ph) { am.ph = ph.replace(/\D/g, ''); }
+  if (fn) { am.fn = fn.trim().toLowerCase(); }
+  if (ln) { am.ln = ln.trim().toLowerCase(); }
+
+  if (Object.keys(am).length) {
+    fbq('init', '2158463874888716', am);
+  }
+
+  fbq('track', 'PageView');
+
+  if (p.has('invitee_uuid')) {
+    fbq('track', 'Schedule', {}, { eventID: p.get('invitee_uuid') });
+  }
+})();
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=2158463874888716&ev=PageView&noscript=1"
