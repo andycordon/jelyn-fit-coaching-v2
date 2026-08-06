@@ -204,6 +204,42 @@
   var params = new URLSearchParams(window.location.search);
   var utm = {};
 
+  // Détection du canal d'origine
+  var canal = sessionStorage.getItem('jf_canal');
+
+  if (!canal) {
+    if (params.get('utm_source')) {
+      canal = params.get('utm_source');
+    } else if (params.get('gclid')) {
+      canal = 'google-ads';
+    } else {
+      var ref = document.referrer || '';
+      var hote = '';
+
+      try {
+        hote = ref ? new URL(ref).hostname.replace(/^www\./, '') : '';
+      } catch (e) {}
+
+      var moi = location.hostname.replace(/^www\./, '');
+
+      if (!ref || hote === moi) {
+        canal = 'direct';
+      } else if (/(^|\.)google\./.test(hote)) {
+        canal = 'google-organique';
+      } else if (/(^|\.)(bing|yahoo|duckduckgo|ecosia|qwant)\./.test(hote)) {
+        canal = 'recherche-autre';
+      } else if (/(^|\.)(instagram|facebook|fb)\./.test(hote)) {
+        canal = 'social-organique';
+      } else if (/(^|\.)calendly\./.test(hote)) {
+        canal = 'direct';
+      } else {
+        canal = 'referral-' + hote;
+      }
+    }
+
+    sessionStorage.setItem('jf_canal', canal);
+  }
+
   UTM_KEYS.forEach(function (k) {
     var v = params.get(k);
     if (v) utm[k] = v;
