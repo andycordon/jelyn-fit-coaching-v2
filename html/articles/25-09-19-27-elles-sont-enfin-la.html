@@ -167,67 +167,126 @@
   var UTM_KEYS = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
   var params = new URLSearchParams(window.location.search);
   var utm = {};
-  UTM_KEYS.forEach(function (k) { var v = params.get(k); if (v) utm[k] = v; });
 
-  // [AJOUT 1] Le fbclid voyage dans utm_term - Calendly supprime fbclid
+  UTM_KEYS.forEach(function (k) {
+    var v = params.get(k);
+    if (v) utm[k] = v;
+  });
+
+  // Capture du fbclid dans utm_term
   var fbclid = params.get('fbclid');
-  if (fbclid && !utm.utm_term) { utm.utm_term = fbclid; }
+  if (fbclid && !utm.utm_term) {
+    utm.utm_term = fbclid;
+  }
 
   try {
-    if (Object.keys(utm).length) sessionStorage.setItem('jf_utm', JSON.stringify(utm));
-    else { var s = sessionStorage.getItem('jf_utm'); if (s) utm = JSON.parse(s); }
+    if (Object.keys(utm).length) {
+      sessionStorage.setItem('jf_utm', JSON.stringify(utm));
+    } else {
+      var s = sessionStorage.getItem('jf_utm');
+      if (s) utm = JSON.parse(s);
+    }
   } catch (e) {}
 
-  // [MODIF] plus de "return" anticipé ici : les ajouts 2 et 3 doivent
-  // fonctionner même sans UTM (trafic direct, organique).
+  // Fonctionne même sans UTM
   var aDesUtm = Object.keys(utm).length > 0;
 
   function withUtm(raw) {
     try {
       var u = new URL(raw, window.location.href);
-      Object.keys(utm).forEach(function (k) { u.searchParams.set(k, utm[k]); });
+
+      Object.keys(utm).forEach(function (k) {
+        u.searchParams.set(k, utm[k]);
+      });
+
       return u.toString();
-    } catch (e) { return raw; }
+    } catch (e) {
+      return raw;
+    }
   }
-  function isCal(url){ return typeof url === 'string' && url.indexOf('calendly.com') !== -1; }
+
+  function isCal(url) {
+    return typeof url === 'string' && url.indexOf('calendly.com') !== -1;
+  }
 
   function patchStatic() {
+
     Array.prototype.forEach.call(
       document.querySelectorAll('a[href*="calendly.com"]'),
       function (a) {
-        a.removeAttribute('target');                 // [AJOUT 2]
-        if (aDesUtm) { a.href = withUtm(a.getAttribute('href')); }
+
+        // Ouvre Calendly dans le même contexte
+        a.removeAttribute('target');
+
+        if (aDesUtm) {
+          a.href = withUtm(a.getAttribute('href'));
+        }
+
       }
     );
+
     if (aDesUtm) {
+
       Array.prototype.forEach.call(
         document.querySelectorAll('[data-url*="calendly.com"]'),
-        function (el) { el.setAttribute('data-url', withUtm(el.getAttribute('data-url'))); }
+        function (el) {
+          el.setAttribute(
+            'data-url',
+            withUtm(el.getAttribute('data-url'))
+          );
+        }
       );
+
     }
   }
 
   function onClick(e) {
+
     var n = e.target;
+
     while (n && n !== document) {
+
       if (n.tagName === 'A' && isCal(n.getAttribute('href'))) {
+
         if (aDesUtm) {
+
           var p = withUtm(n.getAttribute('href'));
-          if (p !== n.getAttribute('href')) n.href = p;
+
+          if (p !== n.getAttribute('href')) {
+            n.href = p;
+          }
+
         }
-        // [AJOUT 3] événement d'apprentissage Meta
+
+        // Envoie un signal Meta au clic Calendly
         if (typeof fbq === 'function') {
-          fbq('track', 'InitiateCheckout', { content_name: 'reservation_appel' });
+          fbq(
+            'track',
+            'InitiateCheckout',
+            {
+              content_name: 'reservation_appel'
+            }
+          );
         }
+
         return;
       }
+
       n = n.parentNode;
     }
   }
 
-  function init() { patchStatic(); document.addEventListener('click', onClick, true); }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
-  else init();
+  function init() {
+    patchStatic();
+    document.addEventListener('click', onClick, true);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
 })();
 </script>
 
