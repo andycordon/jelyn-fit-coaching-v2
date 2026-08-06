@@ -286,6 +286,14 @@
         u.searchParams.set(k, utm[k]);
       });
 
+// Ajout du canal si aucune campagne n'existe
+if (!u.searchParams.get('utm_source')) {
+  var canal = sessionStorage.getItem('jf_canal');
+  if (canal) {
+    u.searchParams.set('utm_source', canal);
+  }
+}
+
       return u.toString();
     } catch (e) {
       return raw;

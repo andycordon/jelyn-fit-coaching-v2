@@ -321,9 +321,22 @@ Les séances à distance ne sont pas éligibles au crédit d'impôt services à 
   function withUtm(raw) {
     try {
       var u = new URL(raw, window.location.href);
-      Object.keys(utm).forEach(function (k) { u.searchParams.set(k, utm[k]); });
+            Object.keys(utm).forEach(function (k) {
+        u.searchParams.set(k, utm[k]);
+      });
+
+// Ajout du canal si aucune campagne n'existe
+if (!u.searchParams.get('utm_source')) {
+  var canal = sessionStorage.getItem('jf_canal');
+  if (canal) {
+    u.searchParams.set('utm_source', canal);
+  }
+}
+
       return u.toString();
-    } catch (e) { return raw; }
+    } catch (e) {
+      return raw;
+    }
   }
   function isCal(url){ return typeof url === 'string' && url.indexOf('calendly.com') !== -1; }
 
