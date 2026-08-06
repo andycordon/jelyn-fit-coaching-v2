@@ -341,7 +341,6 @@
   var UTM_KEYS = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'];
   var params = new URLSearchParams(window.location.search);
   var utm = {};
-
   UTM_KEYS.forEach(function (k) {
     var v = params.get(k);
     if (v) utm[k] = v;

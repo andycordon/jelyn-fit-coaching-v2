@@ -38,6 +38,23 @@ fbq('init', '2158463874888716');
     fbq('init', '2158463874888716', am);
   }
 
+  // Mise à disposition des données Calendly avant nettoyage de l'URL
+window.JF_BOOKING = {
+  invitee_uuid: p.get('invitee_uuid'),
+  email: em,
+  phone: ph,
+  first_name: fn,
+  last_name: ln,
+  answer_1: p.get('answer_1'),
+  answer_2: p.get('answer_2'),
+  answer_3: p.get('answer_3'),
+  utm_source: p.get('utm_source'),
+  utm_medium: p.get('utm_medium'),
+  utm_campaign: p.get('utm_campaign'),
+  utm_content: p.get('utm_content'),
+  utm_term: p.get('utm_term')
+};
+
   // Nettoyer l'URL avant les appels au Pixel
   try {
     if (window.history && history.replaceState && window.location.search) {
@@ -852,7 +869,6 @@ src="https://www.facebook.com/tr?id=2158463874888716&ev=PageView&noscript=1"
     if (v) utm[k] = v;
   });
 
-  // Capture du fbclid dans utm_term
   var fbclid = params.get('fbclid');
   if (fbclid && !utm.utm_term) {
     utm.utm_term = fbclid;
@@ -867,7 +883,6 @@ src="https://www.facebook.com/tr?id=2158463874888716&ev=PageView&noscript=1"
     }
   } catch (e) {}
 
-  // Fonctionne même sans UTM
   var aDesUtm = Object.keys(utm).length > 0;
 
   function withUtm(raw) {
@@ -889,12 +904,10 @@ src="https://www.facebook.com/tr?id=2158463874888716&ev=PageView&noscript=1"
   }
 
   function patchStatic() {
-
     Array.prototype.forEach.call(
       document.querySelectorAll('a[href*="calendly.com"]'),
       function (a) {
 
-        // Ouvre Calendly dans le même contexte
         a.removeAttribute('target');
 
         if (aDesUtm) {
@@ -903,20 +916,6 @@ src="https://www.facebook.com/tr?id=2158463874888716&ev=PageView&noscript=1"
 
       }
     );
-
-    if (aDesUtm) {
-
-      Array.prototype.forEach.call(
-        document.querySelectorAll('[data-url*="calendly.com"]'),
-        function (el) {
-          el.setAttribute(
-            'data-url',
-            withUtm(el.getAttribute('data-url'))
-          );
-        }
-      );
-
-    }
   }
 
   function onClick(e) {
@@ -928,24 +927,13 @@ src="https://www.facebook.com/tr?id=2158463874888716&ev=PageView&noscript=1"
       if (n.tagName === 'A' && isCal(n.getAttribute('href'))) {
 
         if (aDesUtm) {
-
-          var p = withUtm(n.getAttribute('href'));
-
-          if (p !== n.getAttribute('href')) {
-            n.href = p;
-          }
-
+          n.href = withUtm(n.getAttribute('href'));
         }
 
-        // Envoie un signal Meta au clic Calendly
         if (typeof fbq === 'function') {
-          fbq(
-            'track',
-            'InitiateCheckout',
-            {
-              content_name: 'reservation_appel'
-            }
-          );
+          fbq('track', 'InitiateCheckout', {
+            content_name: 'reservation_appel'
+          });
         }
 
         return;
