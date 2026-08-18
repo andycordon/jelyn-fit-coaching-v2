@@ -209,6 +209,7 @@
   var utm = {};
 
   // Détection du canal d'origine
+try {
   var canal = sessionStorage.getItem('jf_canal');
 
   if (!canal) {
@@ -243,6 +244,7 @@
 
     sessionStorage.setItem('jf_canal', canal);
   }
+} catch (e) {}
 
   UTM_KEYS.forEach(function (k) {
     var v = params.get(k);

@@ -267,6 +267,7 @@ Les séances à distance ne sont pas éligibles au crédit d'impôt services à 
   var utm = {};
 
   // Détection du canal d'origine
+try {
   var canal = sessionStorage.getItem('jf_canal');
 
   if (!canal) {
@@ -301,6 +302,7 @@ Les séances à distance ne sont pas éligibles au crédit d'impôt services à 
 
     sessionStorage.setItem('jf_canal', canal);
   }
+} catch (e) {}
 
   UTM_KEYS.forEach(function (k) {
     var v = params.get(k);
