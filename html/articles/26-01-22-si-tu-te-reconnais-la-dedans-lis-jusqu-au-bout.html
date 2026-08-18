@@ -278,14 +278,10 @@ if (!u.searchParams.get('utm_source')) {
         // Ouvre Calendly dans le même contexte
         a.removeAttribute('target');
 
-        if (aDesUtm) {
           a.href = withUtm(a.getAttribute('href'));
-        }
 
       }
     );
-
-    if (aDesUtm) {
 
       Array.prototype.forEach.call(
         document.querySelectorAll('[data-url*="calendly.com"]'),
@@ -296,8 +292,6 @@ if (!u.searchParams.get('utm_source')) {
           );
         }
       );
-
-    }
   }
 
   function onClick(e) {
@@ -308,15 +302,11 @@ if (!u.searchParams.get('utm_source')) {
 
       if (n.tagName === 'A' && isCal(n.getAttribute('href'))) {
 
-        if (aDesUtm) {
-
           var p = withUtm(n.getAttribute('href'));
 
           if (p !== n.getAttribute('href')) {
             n.href = p;
           }
-
-        }
 
         // Envoie un signal Meta au clic Calendly
         if (typeof fbq === 'function') {

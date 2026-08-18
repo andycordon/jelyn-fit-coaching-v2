@@ -279,26 +279,32 @@ if (!u.searchParams.get('utm_source')) {
     Array.prototype.forEach.call(
       document.querySelectorAll('a[href*="calendly.com"]'),
       function (a) {
-        a.removeAttribute('target');                 // [AJOUT 2]
-        if (aDesUtm) { a.href = withUtm(a.getAttribute('href')); }
+                a.removeAttribute('target');
+
+          a.href = withUtm(a.getAttribute('href'));
       }
     );
-    if (aDesUtm) {
       Array.prototype.forEach.call(
         document.querySelectorAll('[data-url*="calendly.com"]'),
-        function (el) { el.setAttribute('data-url', withUtm(el.getAttribute('data-url'))); }
+        function (el) {
+          el.setAttribute(
+            'data-url',
+            withUtm(el.getAttribute('data-url'))
+          );
+        }
       );
-    }
   }
 
   function onClick(e) {
     var n = e.target;
     while (n && n !== document) {
-      if (n.tagName === 'A' && isCal(n.getAttribute('href'))) {
-        if (aDesUtm) {
+            if (n.tagName === 'A' && isCal(n.getAttribute('href'))) {
+
           var p = withUtm(n.getAttribute('href'));
-          if (p !== n.getAttribute('href')) n.href = p;
-        }
+
+          if (p !== n.getAttribute('href')) {
+            n.href = p;
+          }
         // [AJOUT 3] événement d'apprentissage Meta
         if (typeof fbq === 'function') {
           fbq('track', 'InitiateCheckout', { content_name: 'reservation_appel' });
