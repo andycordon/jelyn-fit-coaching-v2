@@ -970,9 +970,7 @@ if (!u.searchParams.get('utm_source')) {
 
       if (n.tagName === 'A' && isCal(n.getAttribute('href'))) {
 
-        if (aDesUtm) {
           n.href = withUtm(n.getAttribute('href'));
-        }
 
         if (typeof fbq === 'function') {
           fbq('track', 'InitiateCheckout', {
