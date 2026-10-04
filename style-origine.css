@@ -873,7 +873,8 @@ details[open] .reponse {
 
 
 
-/*Zone avis slide*/
+/* Zone avis slider */
+
 .avis-wrapper {
   width: 100%;
   overflow: hidden;
@@ -885,12 +886,12 @@ details[open] .reponse {
 
 .avis-track {
   display: flex;
-  width: 500%;
-  animation: avis-auto 20s infinite;
+  width: 1400%;
+  animation: avis-auto 56s infinite;
 }
 
 .avis {
-  flex: 0 0 20%;
+  flex: 0 0 7.142857%;
   font-size: 1.08rem;
 }
 
@@ -903,11 +904,57 @@ details[open] .reponse {
 }
 
 @keyframes avis-auto {
-  0%,20%   { transform: translateX(0); }
-  25%,45%  { transform: translateX(-20%); }
-  50%,70%  { transform: translateX(-40%); }
-  75%,95%  { transform: translateX(-60%); }
-  100%     { transform: translateX(0); }
+  0%, 7.14% {
+    transform: translateX(0);
+  }
+
+  8.33%, 15.47% {
+    transform: translateX(-7.142857%);
+  }
+
+  16.67%, 23.81% {
+    transform: translateX(-14.285714%);
+  }
+
+  25%, 32.14% {
+    transform: translateX(-21.428571%);
+  }
+
+  33.33%, 40.47% {
+    transform: translateX(-28.571428%);
+  }
+
+  41.67%, 48.81% {
+    transform: translateX(-35.714285%);
+  }
+
+  50%, 57.14% {
+    transform: translateX(-42.857142%);
+  }
+
+  58.33%, 65.47% {
+    transform: translateX(-50%);
+  }
+
+  66.67%, 73.81% {
+    transform: translateX(-57.142857%);
+  }
+
+  75%, 82.14% {
+    transform: translateX(-64.285714%);
+  }
+
+  83.33%, 90.47% {
+    transform: translateX(-71.428571%);
+  }
+
+  91.67%, 98.81% {
+    transform: translateX(-78.571428%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .citation {
